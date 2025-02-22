@@ -47,19 +47,19 @@ def file_input():
     file.close()
     return data
 
-def plot_position(long_value, lat_value):
-    """ Plots given data as latitude as a function of longitude
-    Parameters: data (a dictionary containing latitude and longitude data, with each key representing a time in seconds)
+def plot_position(long_values, lat_values):
+    """ Plots given data as longitude as a function of latitude
+    Parameters: lists of longitude and latitude data
     Returns: nothing
     """
     img = plt.imread("mapv1.jpg")
     fig, ax = plt.subplots()
     ax.imshow(img, extent = [-114.1320, -114.1304, 51.0787, 51.0795])
-    ax.plot(long_value, lat_value, marker = '.', ls = '--')
+    ax.plot(long_values, lat_values, marker = '.', ls = '--')
     plt.title("DATA COLLECTED")
+    plt.xlabel("LONGITUDE")
+    plt.ylabel("LATITUDE")
     plt.show()
-
-
 
 def main():
     """
