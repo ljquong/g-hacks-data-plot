@@ -37,7 +37,13 @@ def plot_position(data):
     for i in test_data:
         lat_values += [test_data[i][0]]
         long_values += [test_data[i][1]]
-    plt.plot(long_values, lat_values, marker = 'o', ls = '--')
+    img = plt.imread("mapv1.jpg")
+    fig, ax = plt.subplots()
+    ax.imshow(img, extent = [-114.1320, -114.1304, 51.0787, 51.0795])
+    #ax.scatter(long_values, lat_values)
+    #ymin = 51.0788, ymax = 51.0794
+    #xmin = -114.1318, xmax = -114.1306
+    ax.plot(long_values, lat_values, marker = 'o', ls = '--')
     plt.title("DATA COLLECTED")
     plt.show()
 
