@@ -5,14 +5,14 @@ def plot_position(long_values, lat_values):
     Parameters: lists of longitude and latitude data
     Returns: nothing
     """
-    img = plt.imread("mapv1.jpg")
-    fig, ax = plt.subplots()
-    ax.imshow(img, extent = [-114.1320, -114.1304, 51.0787, 51.0795])
-    ax.plot(long_values, lat_values, marker = '.', ls = '--')
-    plt.title("DATA COLLECTED")
+    img = plt.imread("mapv1.jpg")    # reads in an image of a map of campus that will be used as the background of the plot
+    fig, ax = plt.subplots()        # create figure 
+    ax.imshow(img, extent = [-114.1320, -114.1304, 51.0787, 51.0795])    # set map image as background of plot, centered based on extreme values of latitude and longitude
+    ax.plot(long_values, lat_values, marker = '.', ls = '--')        # add latitude and longitude data points with dashed line connecting them
+    plt.title("DATA COLLECTED")        # add various titles for plot
     plt.xlabel("LONGITUDE")
     plt.ylabel("LATITUDE")
-    plt.show()
+    plt.show()                        # display the plot
 
 def main():
     """
@@ -52,5 +52,6 @@ def main():
         z.append(float(data[i][9]))
     
     plot_position(long,lat)
-    
+
+# run main program
 main()
