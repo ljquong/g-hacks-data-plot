@@ -27,7 +27,7 @@ def smooth(lat, long, v):
     for i in range(len(v)):  # evaluate each velocity
         if v[i]<6366330 or v[i]>6366334.5:  # if the velocity surpasses threshold within 6366330 and 636634.5, assume gnss interference
             newlat.pop(i-counter)   # remove latitude value at this instance
-            newlong.pop(i-counter)  # remove latitude value at this instance
+            newlong.pop(i-counter)  # remove longitude value at this instance
             counter+=1              # increase the counter for removed items
     return newlat, newlong          # return new list of processed latitude and longitude data 
 
