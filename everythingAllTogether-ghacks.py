@@ -29,7 +29,6 @@ def smooth(lat, long, v):
             newlat.pop(i-counter)   # remove latitude value at this instance
             newlong.pop(i-counter)  # remove latitude value at this instance
             counter+=1              # increase the counter for removed items
-
     return newlat, newlong          # return new list of processed latitude and longitude data 
 
 def main():
@@ -55,7 +54,6 @@ def main():
         long.append(float(data[i][12]))  # append each longitude into long list
 
     for i in range(2,len(data),4):  # identify the bestxyz data
-
         data[i] = data[i].split(" ")  # split each space for separated data/field
         x_value = float(data[i][7])  # identify velocity in x value
         y_value = float(data[i][8])  # identify velocity in y value
